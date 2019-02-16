@@ -1,19 +1,68 @@
 # **Sass: Syntactically Awesome Style Sheets**
 
- 
-# Sass versus SCSS
-
-I've seen both from Youtube videos. It seems Sass is preffered for it's ease of use. The first video I watched displayed SCSS so I am tempted to be biased toward it. But SCSS is technically "newer".
-
 Historically, Sass is derived from HAML's creators which sought to simplify HTML syntax. Sass 3 was released at beta in 2010.
 
 The SCSS syntax was built from the ground up and can do anything Sass can do. SCSS can import Sass files and vice versa. Sass whitespace syntax and the SCSS syntax cannot live in the same file. That is it's only limitation to cooperatibilty.
 
+# Sass versus SCSS
+
+|  |   Advantage    |   Disadvantage  |
+|   ---    |   ---  |   ---   |
+|   Sass            |   less characters |   CSS conversion required |
+|   SCSS            |   no conversion required  |   Curly brackets and semi colons |
+
+
+I've seen both from Youtube videos. It seems Sass is preffered for it's ease of use. The first video I watched displayed SCSS so I am tempted to be biased toward it. But SCSS is technically "newer".
+
+
+ ```// note: this table didn't work
 | **Side by Side Look**                                                            |
 |   ----------      |   Advantage               |   Disadvantage                   |
 |   ----------      |   ----------              |   ----------                     |
 |   Sass            |   less characters         |   CSS conversion required        |
 |   SCSS            |   no conversion required  |   Curly brackets and semi colons |
+ ```
+
+
+
+ 
+
+
+
+
+```
+| Command | Description |
+| --- | --- |
+| git status | List all new or modified files |
+| git diff | Show file differences that haven't been staged |
+```
+
+
+
+SCSS seems advantageous for newcomers just because it's more familiar. Sass seems like something you get to later on because the syntax makes more sense naturally.
+
+// Note: CSS writing styles include `expanded`, `nested`, and `compact`
+
+``` 
+// Expanded
+header {
+  width: $header-width;
+  height: $header-height;
+}
+
+// Nested
+header .nav {
+  text-decoration: none;
+  background: $background-color;
+  color: $text-color;
+  border-radius: $default-radius $default-radius 0 0; }
+
+// Compact
+header .nav p { font-weight: bold; }
+```
+
+
+
 
 
 # Sources
