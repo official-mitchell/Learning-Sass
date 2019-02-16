@@ -1,4 +1,3 @@
-
 #Getting started.
 If you weren't using the Live Scss compiler you'd go into terminal
        ` sass input.css output.css`
@@ -13,6 +12,11 @@ To "watch" instead of "manually build" you'd
         `accent: ######,`
 )
 ```
+
+Sass versus SCSS
+
+I've seen both from YOutube videos. It seems Sass is preffered for it's ease of use. The first video I watched displayed SCSS so I am tempted to be biased toward it.
+
 
  **the clippy tool**
 bennettfeely.com/clippy
@@ -71,3 +75,6 @@ remember `line-height` brings things closer together. default value is 1. Set it
 #Sass partials
 Modularize the codes by using @imports on pieces of. 
 The name of the documents must use an _ in order to begin. `
+
+A partial is any file with an underscore _ preceding the name. When Sass sees these files, it will not process them into CSS files. A partial requires that it be imported into another file that will inevitability be processed into CSS in order for it to be output.
+
