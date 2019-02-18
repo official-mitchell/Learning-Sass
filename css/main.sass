@@ -1,0 +1,86 @@
+/* working here because the .scss file should be reserved for scss and this for sass.
+     
+// #############################################################################
+// Variables
+// #############################################################################
+
+$black: #333;
+$pale: #d2e1dd;
+$pink: #c69;
+$blue: #036;
+
+$font-stack: 'Georgia', serif;
+$font-size: 14px;
+
+// #############################################################################
+// Nesting
+// #############################################################################
+
+// 1. sass nesting
+.block div
+  border: 1px solid black
+  ul
+    width: 100%
+    float: left
+    li
+      float: left
+      width: 100%
+      background: orange
+      p
+        font-weight: bold
+        line-height: 1.5em
+
+    
+    
+
+// #############################################################################
+// Sass Functions
+// #############################################################################
+
+
+// #############################################################################
+// Mixins
+// #############################################################################
+    
+    
+=block-mixin
+  background: green
+.block
+  +block_mixin
+  
+  
+  // #############################################################################
+// Imports
+// #############################################################################
+    
+// 1.
+@import "variables";
+@import "functions";
+@import "mixins";
+@import "reset";
+@import "base";
+@import "layout";
+@import "module";
+@import "state";
+@import "theme";
+
+// 2.
+// Included libraries
+// Sass code libraries
+@import "compass/css3";
+
+// Project specific code
+@import "reset";
+@import "variables";
+@import "functions";
+@import "mixins";
+@import "base";
+@import "layout";
+@import "module";
+@import "state";
+@import "theme";
+
+// Imported plug-in libraries
+@import "flipclock";
+
+    

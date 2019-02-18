@@ -22,6 +22,30 @@ $font-size: 14px;
 // Nesting
 // #############################################################################
 
+// generally avoid comments... but here is a good way to do compact classes
+.block div { border: 1px solid black; }
+.block div ul { width: 100%; float: left; }
+.block div ul li { float: left; width: 100%; background: orange; }
+.block div ul li p { font-weight: bold; line-height: 1.5em; }
+
+.block {                /* .block opening bracket */
+    div {                 /* div opening bracket */
+      border: 1px solid black;
+      ul {                /* ul opening bracket */
+        width: 100%;
+        float: left;
+        li {              /* li opening bracket */
+          float: left;
+          width: 100%;
+          background: orange;
+          p {             /* p opening bracket */
+            font-weight: bold;
+            line-height: 1.5em;
+          }               /* p closing bracket */
+        }                 /* li closing bracket */
+      }                   /* ul closing bracket */
+    }                     /* div closing bracket */
+  }                       /* .block closing bracket */
 
 // #############################################################################
 // Sass Functions
@@ -32,8 +56,66 @@ $font-size: 14px;
 // Mixins
 // #############################################################################
 
+// 1.
+// placement of mixins has a direct impact on the cascade of output CSS. 
+// place them after declaring the selector
 
+.foo {
+    @include transition(all, 0.6s, ease);
+    background-color: orange;
+    width: 50%;
+    .nested-foo {
+      width: 25%;
+      margin: 0 auto;
+    }
+  }
 
+  
+// 2. 
+
+@mixin text-format($size, $family, $color) {
+    font: {
+      size: $size;
+      family: $family;
+    };
+    color: $color;
+  }
+  
+  .site-header {
+    @include text-format(12px, verdana, red);
+  }
+  
+  
+// #############################################################################
+// Extended selectors
+// #############################################################################
+// Extends do not accept arguments and do not inject code, extended selectors are modified in place of origin by appending the "extended selector"
+
+// where did the @include come from?
+
+  // Style class object
+.default_gray_border {
+    @include border-radius(25px);
+    border: 1px solid gray;
+  }
+// Semantically named class
+.promoters_box {
+@extend .default_gray_border; /*extended selector */
+}
+ 
+        // Output CSS
+        .default_gray_border, .promoters_box {  // notice the chained selectors
+            -webkit-border-radius: 25px;
+            -moz-border-radius: 25px;
+            border-radius: 25px;
+            border: 1px solid gray;
+        }
+
+        
+  
+  
+  
+  
 
 // Example Project
 
